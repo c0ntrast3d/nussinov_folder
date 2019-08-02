@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e8bf034-e54d-4cfa-8a8b-bf9c9b8b014a" name="Default Changelist" comment="" />
+    <list default="true" id="2e8bf034-e54d-4cfa-8a8b-bf9c9b8b014a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/ValidCoupling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/SecondaryStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/SecondaryStructure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -16,7 +34,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1Oja2BMH3mwtH0FCTJpTDb10m7B" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -41,7 +61,54 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SecondaryStructureTest.testSecondaryStructureString">
+  <component name="RunManager" selected="JUnit.SecondaryStructureTest.testGetDotBracketNotation">
+    <configuration name="SecondaryStructureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.unicam.cs.asdl1819.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.SecondaryStructureTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondaryStructureTest.testEqualsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.unicam.cs.asdl1819.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.SecondaryStructureTest" />
+      <option name="METHOD_NAME" value="testEqualsObject" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondaryStructureTest.testGetDotBracketNotation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.unicam.cs.asdl1819.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.SecondaryStructureTest" />
+      <option name="METHOD_NAME" value="testGetDotBracketNotation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SecondaryStructureTest.testHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
@@ -76,8 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SecondaryStructureTest.testSecondaryStructureString" />
+        <item itemvalue="JUnit.SecondaryStructureTest.testGetDotBracketNotation" />
+        <item itemvalue="JUnit.SecondaryStructureTest" />
+        <item itemvalue="JUnit.SecondaryStructureTest.testEqualsObject" />
         <item itemvalue="JUnit.SecondaryStructureTest.testHashCode" />
+        <item itemvalue="JUnit.SecondaryStructureTest.testSecondaryStructureString" />
       </list>
     </recent_temporary>
   </component>
@@ -93,11 +163,22 @@
       <updated>1564493249442</updated>
       <workItem from="1564493250868" duration="1503000" />
       <workItem from="1564573968471" duration="4529000" />
-      <workItem from="1564737239177" duration="2751000" />
+      <workItem from="1564737239177" duration="14905000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

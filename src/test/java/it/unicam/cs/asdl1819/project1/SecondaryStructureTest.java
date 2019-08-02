@@ -4,43 +4,47 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class SecondaryStructureTest {
 
+    private Set<WeakBond> bonds = new HashSet<>();
+    private SecondaryStructure testStructure;
+
+
     @Before
     public void setUp() throws Exception {
-
+        bonds.add(new WeakBond(1, 2));
+        bonds.add(new WeakBond(5, 6));
+        testStructure = new SecondaryStructure("GCAUGU", bonds);
     }
 
     @Test
     public final void testHashCode() {
-
         /* Hash codes of two identical structures should be the same */
         Assert.assertEquals(
-                new SecondaryStructure("AUGA").hashCode(),
-                new SecondaryStructure("AUGA").hashCode()
+                new SecondaryStructure("GCAUGU").hashCode(),
+                new SecondaryStructure("GCAUGU").hashCode()
         );
-
     }
 
     @Test
     public final void testSecondaryStructureString() {
-        Set<WeakBond> bonds = new HashSet<>();
-        bonds.add(new WeakBond(1, 2));
-        bonds.add(new WeakBond(3, 4));
-        bonds.add(new WeakBond(5, 6 ));
-        bonds.add(new WeakBond(5, 6 ));
+        assertEquals("{(1, 2), (5, 6)}", testStructure.toString());
+    }
 
-        System.out.println(new SecondaryStructure("AUGA", bonds).toString());
-        System.out.println(new SecondaryStructure("AUGA").hashCode());
+    @Test(expected = IllegalArgumentException.class)
+    public final void testSecondaryStructureValidCoupling() {
+        new SecondaryStructure("GCAUCU", bonds);
+    }
 
-        // fail("Not yet implemented"); // TODO
+    @Test(expected = IllegalArgumentException.class)
+    public final void testSecondaryStructureAddExistingBond() {
+        bonds.add(new WeakBond(1, 6));
+        new SecondaryStructure("GCAUGU", bonds);
     }
 
     @Test
@@ -50,7 +54,7 @@ public class SecondaryStructureTest {
 
     @Test
     public final void testGetPrimarySequence() {
-        fail("Not yet implemented"); // TODO
+        assertEquals("GCAUGU", testStructure.getPrimarySequence());
     }
 
     @Test
@@ -65,22 +69,22 @@ public class SecondaryStructureTest {
 
     @Test
     public final void testAddBond() {
-        fail("Not yet implemented"); // TODO
+        assertTrue(testStructure.addBond(new WeakBond(3, 4)));
     }
 
     @Test
     public final void testGetCardinality() {
-        fail("Not yet implemented"); // TODO
+        assertEquals(2, testStructure.getCardinality());
     }
 
     @Test
     public final void testGetDotBracketNotation() {
-        fail("Not yet implemented"); // TODO
+        testStructure.getDotBracketNotation();
     }
 
     @Test
     public final void testEqualsObject() {
-        fail("Not yet implemented"); // TODO
+        assertTrue(testStructure.equals(new SecondaryStructure("GCAUGU", bonds)));
     }
 
 }

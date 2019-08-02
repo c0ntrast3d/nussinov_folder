@@ -1,14 +1,14 @@
 package it.unicam.cs.asdl1819.project1;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
 /**
  * Un oggetto di questa classe rappresenta una struttura secondaria di RNA.
- * 
- * @author Luca Tesei
  *
+ * @author Luca Tesei
  */
 public class SecondaryStructure {
 
@@ -19,15 +19,11 @@ public class SecondaryStructure {
     /**
      * Costruisce una struttura secondaria con un insieme vuoto di legami
      * deboli.
-     * 
-     * @param primarySequence
-     *                            la sequenza di nucleotidi
-     * 
-     * @throws IllegalArgumentException
-     *                                      se la primarySequence contiene dei
-     *                                      codici di nucleotidi sconosciuti
-     * @throws NullPointerException
-     *                                      se la sequenza di nucleotidi è nulla
+     *
+     * @param primarySequence la sequenza di nucleotidi
+     * @throws IllegalArgumentException se la primarySequence contiene dei
+     *                                  codici di nucleotidi sconosciuti
+     * @throws NullPointerException     se la sequenza di nucleotidi è nulla
      */
     public SecondaryStructure(String primarySequence) {
         if (primarySequence == null)
@@ -37,15 +33,15 @@ public class SecondaryStructure {
         // check bases in the primary structure
         for (int i = 0; i < seq.length(); i++)
             switch (seq.charAt(i)) {
-            case 'A':
-            case 'U':
-            case 'C':
-            case 'G':
-                break;
-            default:
-                throw new IllegalArgumentException(
-                        "INPUT ERROR: primary structure contains an unkwnown nucleotide code at position "
-                                + (i + 1));
+                case 'A':
+                case 'U':
+                case 'C':
+                case 'G':
+                    break;
+                default:
+                    throw new IllegalArgumentException(
+                            "INPUT ERROR: primary structure contains an unkwnown nucleotide code at position "
+                                    + (i + 1));
             }
         this.primarySequence = seq;
         this.bonds = new HashSet<WeakBond>();
@@ -53,31 +49,22 @@ public class SecondaryStructure {
 
     /**
      * Costruisce una struttura secondaria con un insieme dato di legami deboli.
-     * 
-     * @param primarySequence
-     *                            la sequenza di nucleotidi
-     * @param bonds
-     *                            l'insieme dei legami deboli presenti nella
-     *                            struttura
-     * 
-     * @throws IllegalArgumentException
-     *                                       se la primarySequence contiene dei
-     *                                       codici di nucleotidi sconosciuti
-     * @throws NullPointerException
-     *                                       se la sequenza di nucleotidi è
-     *                                       nulla
-     * @throws NullPointerException
-     *                                       se l'insieme dei legami è nullo
-     * @throws IndexOutOfBoundsException
-     *                                       se almeno uno dei due indici di uno
-     *                                       dei legami deboli passati esce
-     *                                       fuori dai limiti della sequenza
-     *                                       primaria di questa struttura
-     * @throws IllegalArgumentException
-     *                                       se almeno uno dei legami deboli
-     *                                       passati connette due nucleotidi a
-     *                                       formare una coppia non consentita.
-     * 
+     *
+     * @param primarySequence la sequenza di nucleotidi
+     * @param bonds           l'insieme dei legami deboli presenti nella
+     *                        struttura
+     * @throws IllegalArgumentException  se la primarySequence contiene dei
+     *                                   codici di nucleotidi sconosciuti
+     * @throws NullPointerException      se la sequenza di nucleotidi è
+     *                                   nulla
+     * @throws NullPointerException      se l'insieme dei legami è nullo
+     * @throws IndexOutOfBoundsException se almeno uno dei due indici di uno
+     *                                   dei legami deboli passati esce
+     *                                   fuori dai limiti della sequenza
+     *                                   primaria di questa struttura
+     * @throws IllegalArgumentException  se almeno uno dei legami deboli
+     *                                   passati connette due nucleotidi a
+     *                                   formare una coppia non consentita.
      */
     public SecondaryStructure(String primarySequence, Set<WeakBond> bonds) {
         if (primarySequence == null)
@@ -87,15 +74,15 @@ public class SecondaryStructure {
         // check bases in the primary structure
         for (int i = 0; i < seq.length(); i++)
             switch (seq.charAt(i)) {
-            case 'A':
-            case 'U':
-            case 'C':
-            case 'G':
-                break;
-            default:
-                throw new IllegalArgumentException(
-                        "INPUT ERROR: primary structure contains an unkwnown nucleotide code at position "
-                                + (i + 1));
+                case 'A':
+                case 'U':
+                case 'C':
+                case 'G':
+                    break;
+                default:
+                    throw new IllegalArgumentException(
+                            "INPUT ERROR: primary structure contains an unkwnown nucleotide code at position "
+                                    + (i + 1));
             }
         this.primarySequence = seq;
         this.bonds = new HashSet<WeakBond>();
@@ -105,7 +92,7 @@ public class SecondaryStructure {
 
     /**
      * Restituisce la sequenza di nucleotidi di questa struttura secondaria.
-     * 
+     *
      * @return la sequenza di nucleotidi di questa struttura secondaria
      */
     public String getPrimarySequence() {
@@ -114,7 +101,7 @@ public class SecondaryStructure {
 
     /**
      * Restituisce l'insieme dei legami deboli di questa struttura secondaria.
-     * 
+     *
      * @return l'insieme dei legami deboli di questa struttura secondaria
      */
     public Set<WeakBond> getBonds() {
@@ -123,9 +110,9 @@ public class SecondaryStructure {
 
     /**
      * Determina se questa struttura contiene pseudonodi.
-     * 
+     *
      * @return true, se in questa struttura ci sono almeno due legami deboli che
-     *         si incrociano, false altrimenti
+     * si incrociano, false altrimenti
      */
     public boolean isPseudoknotted() {
         // TODO implementare
@@ -134,58 +121,99 @@ public class SecondaryStructure {
 
     /**
      * Aggiunge un legame debole a questa struttura.
-     * 
-     * @param b
-     *              il legame debole da aggiungere
+     *
+     * @param b il legame debole da aggiungere
      * @return true se il legame è stato aggiunto, false se era già presente
-     * 
-     * @throws NullPointerException
-     *                                       se il legame passato è nullo
-     * @throws IndexOutOfBoundsException
-     *                                       se almeno uno uno dei due indici
-     *                                       del legame debole passato esce
-     *                                       fuori dai limiti della sequenza
-     *                                       primaria di questa struttura
-     * @throws IllegalArgumentException
-     *                                       se il legame debole passato
-     *                                       connette due nucleotidi a formare
-     *                                       una coppia non consentita.
+     * @throws NullPointerException      se il legame passato è nullo
+     * @throws IndexOutOfBoundsException se almeno uno uno dei due indici
+     *                                   del legame debole passato esce
+     *                                   fuori dai limiti della sequenza
+     *                                   primaria di questa struttura
+     * @throws IllegalArgumentException  se il legame debole passato
+     *                                   connette due nucleotidi a formare
+     *                                   una coppia non consentita.
+     * @throws IllegalArgumentException  se nell'insieme dei legami esiste gia
+     *                                   una coppia con gli stessi indici
      */
     public boolean addBond(WeakBond b) {
-        if(b == null) throw new NullPointerException("Bond can not be null");
+        if (b == null) throw new NullPointerException("Non e' possibile inserire un legame nullo");
+
+        int bondIIndex = b.getI();
+        int bondJIndex = b.getJ();
+        int sequenceLength = this.primarySequence.length();
+        if (bondIIndex > sequenceLength || bondJIndex > sequenceLength) throw new IndexOutOfBoundsException(
+                String.format("L'indice del legame supera la lunghezza della struttura primaria : \n" +
+                                "Lunghezza : %d | Indice fornito : %d",
+                        primarySequence.length(),
+                        sequenceLength
+                ));
+
+        char firstNucleotide = this.primarySequence.charAt(b.getI() - 1);
+        char secondNucleotide = this.primarySequence.charAt(b.getJ() - 1);
+        if (!ValidCoupling.isValidCoupling(String.format("%c%c", firstNucleotide, secondNucleotide))) {
+            throw new IllegalArgumentException(String.format("Coppia non consentita :: %c-%c", firstNucleotide, secondNucleotide));
+        }
+
+        this.bonds.forEach((bond) -> {
+            if (bondIIndex == bond.getI() || bondIIndex == bond.getJ())
+                throw new IllegalArgumentException(String.format("Legame con %d esiste gia'", b.getI()));
+            if (bondJIndex == bond.getI() || bondJIndex == bond.getJ())
+                throw new IllegalArgumentException(String.format("Legame con %d esiste gia'", b.getJ()));
+        });
 
         this.bonds.add(b);
         return true;
     }
 
-    private boolean isValidBond(WeakBond bond) {
-        if(bond.getI() >= bond.getJ()) return false;
-        return true;
-    }
-
     /**
      * Restituisce il numero di legami deboli presenti in questa struttura.
-     * 
+     *
      * @return il numero di legami deboli presenti in questa struttura
      */
     public int getCardinality() {
-        // TODO implementare
-        return 0;
+        return this.bonds.size();
     }
 
     /**
      * Restituisce una stringa contenente la rappresentazione nella notazione
      * dot-bracket di questa struttura secondaria.
-     * 
+     *
      * @return una stringa contenente la rappresentazione nella notazione
-     *         dot-bracket di questa struttura secondaria
-     * 
-     * @throws IllegalStateException
-     *                                   se questa struttura secondaria contiene
-     *                                   pseudonodi
+     * dot-bracket di questa struttura secondaria
+     * @throws IllegalStateException se questa struttura secondaria contiene
+     *                               pseudonodi
      */
     public String getDotBracketNotation() {
-        // TODO implementare
+/*        System.out.println(Arrays.toString(
+                "AAGACCUGCACGCUAGUU".split("(?<=\\G.{4})")
+        ));*/
+        String input = this.primarySequence;
+        int currentChunckStart = 0;
+        int chunckLength = 4;
+        StringBuilder result = new StringBuilder();
+
+        if (input.length() <= chunckLength) {
+            result.append(input);
+        } else {
+            while (currentChunckStart + chunckLength < input.length()) {
+                result.append(input.substring(currentChunckStart, currentChunckStart + chunckLength));
+                result.append("\n");
+                currentChunckStart += chunckLength;
+            }
+            result.append(input, currentChunckStart, input.length());
+        }
+        System.out.println(result.toString());
+        System.out.println(result.toString().length());
+        result.append("\n");
+
+
+        StringBuilder dotBracket = new StringBuilder(String.join("", Collections.nCopies(input.length(), ".")));
+        for (WeakBond bond : this.bonds) {
+            dotBracket.setCharAt(bond.getI() - 1, '(');
+            dotBracket.setCharAt(bond.getJ() - 1, ')');
+        }
+        result.append(dotBracket.toString());
+        System.out.println(result.toString());
         return null;
     }
 
