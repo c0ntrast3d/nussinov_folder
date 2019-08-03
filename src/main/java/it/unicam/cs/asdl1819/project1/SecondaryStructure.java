@@ -174,6 +174,24 @@ public class SecondaryStructure {
         return this.bonds.size();
     }
 
+    private String splitInChunks(String input) {
+        int currentChunckStart = 0;
+        int chunckLength = 50;
+        StringBuilder result = new StringBuilder();
+
+        if (input.length() <= chunckLength) {
+            result.append(input);
+        } else {
+            while (currentChunckStart + chunckLength < input.length()) {
+                result.append(input, currentChunckStart, currentChunckStart + chunckLength);
+                result.append("\n");
+                currentChunckStart += chunckLength;
+            }
+            result.append(input, currentChunckStart, input.length());
+        }
+        return result.toString();
+    }
+
     /**
      * Restituisce una stringa contenente la rappresentazione nella notazione
      * dot-bracket di questa struttura secondaria.
@@ -184,37 +202,18 @@ public class SecondaryStructure {
      *                               pseudonodi
      */
     public String getDotBracketNotation() {
-/*        System.out.println(Arrays.toString(
-                "AAGACCUGCACGCUAGUU".split("(?<=\\G.{4})")
-        ));*/
-        String input = this.primarySequence;
-        int currentChunckStart = 0;
-        int chunckLength = 4;
+        if (this.isPseudoknotted()) throw new IllegalStateException("La struttura secondaria contiene pseudonodi");
         StringBuilder result = new StringBuilder();
+        result.append(splitInChunks(this.primarySequence));
 
-        if (input.length() <= chunckLength) {
-            result.append(input);
-        } else {
-            while (currentChunckStart + chunckLength < input.length()) {
-                result.append(input.substring(currentChunckStart, currentChunckStart + chunckLength));
-                result.append("\n");
-                currentChunckStart += chunckLength;
-            }
-            result.append(input, currentChunckStart, input.length());
-        }
-        System.out.println(result.toString());
-        System.out.println(result.toString().length());
-        result.append("\n");
-
-
-        StringBuilder dotBracket = new StringBuilder(String.join("", Collections.nCopies(input.length(), ".")));
+        StringBuilder dotBracket = new StringBuilder(String.join("", Collections.nCopies(this.primarySequence.length(), ".")));
         for (WeakBond bond : this.bonds) {
             dotBracket.setCharAt(bond.getI() - 1, '(');
             dotBracket.setCharAt(bond.getJ() - 1, ')');
         }
-        result.append(dotBracket.toString());
-        System.out.println(result.toString());
-        return null;
+        result.append("\n");
+        result.append(splitInChunks(dotBracket.toString()));
+        return result.toString();
     }
 
     @Override

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e8bf034-e54d-4cfa-8a8b-bf9c9b8b014a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/ValidCoupling.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.java" afterDir="false" />
@@ -163,8 +162,17 @@
       <updated>1564493249442</updated>
       <workItem from="1564493250868" duration="1503000" />
       <workItem from="1564573968471" duration="4529000" />
-      <workItem from="1564737239177" duration="14905000" />
+      <workItem from="1564737239177" duration="16425000" />
+      <workItem from="1564828067054" duration="2541000" />
     </task>
+    <task id="LOCAL-00001" summary="-add: SecStruct: addBond, getCardinality, getDotBracket + tests&#10;Coupling Checker">
+      <created>1564758270406</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1564758270406</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,10 +183,18 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="-add: SecStruct: addBond, getCardinality, getDotBracket + tests&#10;Coupling Checker" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add: SecStruct: addBond, getCardinality, getDotBracket + tests&#10;Coupling Checker" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

@@ -79,7 +79,28 @@ public class SecondaryStructureTest {
 
     @Test
     public final void testGetDotBracketNotation() {
-        testStructure.getDotBracketNotation();
+        Set<WeakBond> testBonds = new HashSet<>();
+        testBonds.add(new WeakBond(5, 11));
+        testBonds.add(new WeakBond(4, 12));
+        testBonds.add(new WeakBond(3, 13));
+        testBonds.add(new WeakBond(2, 14));
+        testBonds.add(new WeakBond(1, 15));
+        testBonds.add(new WeakBond(20, 26));
+        testBonds.add(new WeakBond(19, 27));
+        testBonds.add(new WeakBond(18, 28));
+        testBonds.add(new WeakBond(17, 29));
+        testBonds.add(new WeakBond(16, 30));
+        testBonds.add(new WeakBond(44, 50));
+        testBonds.add(new WeakBond(43, 51));
+        testBonds.add(new WeakBond(42, 52));
+        testBonds.add(new WeakBond(41, 53));
+        testBonds.add(new WeakBond(40, 54));
+        SecondaryStructure testSS = new SecondaryStructure("UUGAUUACGGAUCAAUUGAUUACGGAUCAAGACUACGGUUUGAUUACGGAUCAA", testBonds);
+        String expected = "UUGAUUACGGAUCAAUUGAUUACGGAUCAAGACUACGGUUUGAUUACGGA\n" +
+                "UCAA\n" +
+                "(((((.....)))))(((((.....))))).........(((((.....)\n" +
+                "))))";
+        assertEquals(expected, testSS.getDotBracketNotation());
     }
 
     @Test
