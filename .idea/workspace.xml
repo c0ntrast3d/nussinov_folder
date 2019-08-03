@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e8bf034-e54d-4cfa-8a8b-bf9c9b8b014a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/SecondaryStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/SecondaryStructure.class" afterDir="false" />
@@ -47,6 +47,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -60,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SecondaryStructureTest.testGetDotBracketNotation">
+  <component name="RunManager" selected="JUnit.SecondaryStructureTest.testGetBonds">
     <configuration name="SecondaryStructureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
@@ -76,7 +77,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecondaryStructureTest.testEqualsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecondaryStructureTest.testGetBonds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
         <pattern>
@@ -86,7 +87,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
       <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.SecondaryStructureTest" />
-      <option name="METHOD_NAME" value="testEqualsObject" />
+      <option name="METHOD_NAME" value="testGetBonds" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,7 +125,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecondaryStructureTest.testSecondaryStructureString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecondaryStructureTest.testIsPseudoknotted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
         <pattern>
@@ -134,7 +135,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
       <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.SecondaryStructureTest" />
-      <option name="METHOD_NAME" value="testSecondaryStructureString" />
+      <option name="METHOD_NAME" value="testIsPseudoknotted" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SecondaryStructureTest.testGetBonds" />
+        <item itemvalue="JUnit.SecondaryStructureTest.testIsPseudoknotted" />
+        <item itemvalue="JUnit.SecondaryStructureTest.testHashCode" />
         <item itemvalue="JUnit.SecondaryStructureTest.testGetDotBracketNotation" />
         <item itemvalue="JUnit.SecondaryStructureTest" />
-        <item itemvalue="JUnit.SecondaryStructureTest.testEqualsObject" />
-        <item itemvalue="JUnit.SecondaryStructureTest.testHashCode" />
-        <item itemvalue="JUnit.SecondaryStructureTest.testSecondaryStructureString" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +164,10 @@
       <workItem from="1564493250868" duration="1503000" />
       <workItem from="1564573968471" duration="4529000" />
       <workItem from="1564737239177" duration="16425000" />
-      <workItem from="1564828067054" duration="2541000" />
+      <workItem from="1564828067054" duration="3058000" />
+      <workItem from="1564836985941" duration="3779000" />
+      <workItem from="1564843143309" duration="2076000" />
+      <workItem from="1564846767510" duration="1111000" />
     </task>
     <task id="LOCAL-00001" summary="-add: SecStruct: addBond, getCardinality, getDotBracket + tests&#10;Coupling Checker">
       <created>1564758270406</created>
@@ -172,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564758270406</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="-refac: getDotBracket">
+      <created>1564836194315</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1564836194315</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +204,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-add: SecStruct: addBond, getCardinality, getDotBracket + tests&#10;Coupling Checker" />
-    <option name="LAST_COMMIT_MESSAGE" value="-add: SecStruct: addBond, getCardinality, getDotBracket + tests&#10;Coupling Checker" />
+    <MESSAGE value="-refac: getDotBracket" />
+    <option name="LAST_COMMIT_MESSAGE" value="-refac: getDotBracket" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

@@ -59,12 +59,19 @@ public class SecondaryStructureTest {
 
     @Test
     public final void testGetBonds() {
-        fail("Not yet implemented"); // TODO
+        Assert.assertTrue(testStructure.getBonds().size() > 0);
     }
 
     @Test
     public final void testIsPseudoknotted() {
-        fail("Not yet implemented"); // TODO
+        Set<WeakBond> testBonds = new HashSet<>();
+        testBonds.add(new WeakBond(1, 10));
+        testBonds.add(new WeakBond(2, 9));
+        testBonds.add(new WeakBond(4, 7));
+        testBonds.add(new WeakBond(5, 12));
+        SecondaryStructure testSS = new SecondaryStructure("GCAUGUGCGUGU", testBonds);
+        Assert.assertTrue(testSS.isPseudoknotted());
+        Assert.assertFalse(testStructure.isPseudoknotted());
     }
 
     @Test
@@ -100,6 +107,7 @@ public class SecondaryStructureTest {
                 "UCAA\n" +
                 "(((((.....)))))(((((.....))))).........(((((.....)\n" +
                 "))))";
+        System.out.println(testSS.getDotBracketNotation());
         assertEquals(expected, testSS.getDotBracketNotation());
     }
 

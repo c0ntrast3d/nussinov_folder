@@ -115,7 +115,18 @@ public class SecondaryStructure {
      * si incrociano, false altrimenti
      */
     public boolean isPseudoknotted() {
-        // TODO implementare
+        for (WeakBond bond : this.bonds) {
+            int currentBondIindex = bond.getI();
+            int currentBondJindex = bond.getJ();
+            for (WeakBond other : this.bonds) {
+                int otherBondIIndex = other.getI();
+                int otherBondJIndex = other.getJ();
+                if (otherBondIIndex < currentBondIindex && currentBondIindex < otherBondJIndex)
+                    return true;
+                if (currentBondIindex < otherBondIIndex && otherBondIIndex < currentBondJindex)
+                    return true;
+            }
+        }
         return false;
     }
 
@@ -174,13 +185,21 @@ public class SecondaryStructure {
         return this.bonds.size();
     }
 
+    /**
+     * Spezza una stringa in linee successive di lunghezza 50.
+     *
+     * @param input stringa da spezzare
+     * @return restituisce la stringa spezzata in linee successive (separate da “a capo”) tutte lunghe esattamente
+     * 50 nucleotidi tranne l’ultima.
+     * Se la lunghezza dell'input e minore di 50 - restituisce l'input stesso.
+     */
     private String splitInChunks(String input) {
         int currentChunckStart = 0;
         int chunckLength = 50;
         StringBuilder result = new StringBuilder();
 
         if (input.length() <= chunckLength) {
-            result.append(input);
+            return input;
         } else {
             while (currentChunckStart + chunckLength < input.length()) {
                 result.append(input, currentChunckStart, currentChunckStart + chunckLength);
@@ -207,10 +226,10 @@ public class SecondaryStructure {
         result.append(splitInChunks(this.primarySequence));
 
         StringBuilder dotBracket = new StringBuilder(String.join("", Collections.nCopies(this.primarySequence.length(), ".")));
-        for (WeakBond bond : this.bonds) {
+        this.bonds.forEach((bond -> {
             dotBracket.setCharAt(bond.getI() - 1, '(');
             dotBracket.setCharAt(bond.getJ() - 1, ')');
-        }
+        }));
         result.append("\n");
         result.append(splitInChunks(dotBracket.toString()));
         return result.toString();
