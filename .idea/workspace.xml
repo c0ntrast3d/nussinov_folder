@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e8bf034-e54d-4cfa-8a8b-bf9c9b8b014a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/NussinovMatrixTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovMatrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/SecondaryStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/SecondaryStructure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/SecondaryStructureTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/NussinovFolderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/NussinovFolderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/NussinovMatrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/NussinovMatrix.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/NussinovFolderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/NussinovFolderTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +61,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SecondaryStructureTest.testGetBonds">
-    <configuration name="SecondaryStructureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.NussinovMatrixTest.testSetCellOutOfMatrixDimension">
+    <configuration name="NussinovMatrixTest.testCellInsertion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
         <pattern>
@@ -71,29 +71,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
-      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.SecondaryStructureTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SecondaryStructureTest.testGetBonds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="project1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.unicam.cs.asdl1819.project1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
-      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.SecondaryStructureTest" />
-      <option name="METHOD_NAME" value="testGetBonds" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovMatrixTest" />
+      <option name="METHOD_NAME" value="testCellInsertion" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecondaryStructureTest.testGetDotBracketNotation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NussinovMatrixTest.testGetCellOutOfMatrixDimension" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
         <pattern>
@@ -102,14 +87,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
-      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.SecondaryStructureTest" />
-      <option name="METHOD_NAME" value="testGetDotBracketNotation" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovMatrixTest" />
+      <option name="METHOD_NAME" value="testGetCellOutOfMatrixDimension" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecondaryStructureTest.testHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NussinovMatrixTest.testMatrixCreation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
         <pattern>
@@ -118,14 +103,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
-      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.SecondaryStructureTest" />
-      <option name="METHOD_NAME" value="testHashCode" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovMatrixTest" />
+      <option name="METHOD_NAME" value="testMatrixCreation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecondaryStructureTest.testIsPseudoknotted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NussinovMatrixTest.testSetCellOutOfMatrixDimension" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
         <pattern>
@@ -134,8 +119,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
-      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.SecondaryStructureTest" />
-      <option name="METHOD_NAME" value="testIsPseudoknotted" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovMatrixTest" />
+      <option name="METHOD_NAME" value="testSetCellOutOfMatrixDimension" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NussinovMatrixTest.testSetCellWithNegativeValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.unicam.cs.asdl1819.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovMatrixTest" />
+      <option name="METHOD_NAME" value="testSetCellWithNegativeValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SecondaryStructureTest.testGetBonds" />
-        <item itemvalue="JUnit.SecondaryStructureTest.testIsPseudoknotted" />
-        <item itemvalue="JUnit.SecondaryStructureTest.testHashCode" />
-        <item itemvalue="JUnit.SecondaryStructureTest.testGetDotBracketNotation" />
-        <item itemvalue="JUnit.SecondaryStructureTest" />
+        <item itemvalue="JUnit.NussinovMatrixTest.testSetCellOutOfMatrixDimension" />
+        <item itemvalue="JUnit.NussinovMatrixTest.testGetCellOutOfMatrixDimension" />
+        <item itemvalue="JUnit.NussinovMatrixTest.testSetCellWithNegativeValue" />
+        <item itemvalue="JUnit.NussinovMatrixTest.testCellInsertion" />
+        <item itemvalue="JUnit.NussinovMatrixTest.testMatrixCreation" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +168,8 @@
       <workItem from="1564828067054" duration="3058000" />
       <workItem from="1564836985941" duration="3779000" />
       <workItem from="1564843143309" duration="2076000" />
-      <workItem from="1564846767510" duration="1111000" />
+      <workItem from="1564846767510" duration="4837000" />
+      <workItem from="1564912948658" duration="434000" />
     </task>
     <task id="LOCAL-00001" summary="-add: SecStruct: addBond, getCardinality, getDotBracket + tests&#10;Coupling Checker">
       <created>1564758270406</created>
@@ -183,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564836194315</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="-add: isPseudoknotted and tests">
+      <created>1564847921050</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1564847921050</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +214,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-add: SecStruct: addBond, getCardinality, getDotBracket + tests&#10;Coupling Checker" />
     <MESSAGE value="-refac: getDotBracket" />
-    <option name="LAST_COMMIT_MESSAGE" value="-refac: getDotBracket" />
+    <MESSAGE value="-add: isPseudoknotted and tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add: isPseudoknotted and tests" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
