@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e8bf034-e54d-4cfa-8a8b-bf9c9b8b014a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovFolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovMatrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/NussinovMatrixTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/NussinovMatrixTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/WeakBond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/WeakBond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/NussinovFolderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/NussinovFolderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/NussinovFolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/NussinovFolder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/NussinovMatrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/NussinovMatrix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/NussinovMatrixTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/NussinovMatrixTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/SecondaryStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/SecondaryStructure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/WeakBond.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/WeakBond.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/NussinovFolderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/NussinovFolderTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +59,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -98,7 +105,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NussinovMatrixTest.testStringifyMatrix" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NussinovFolderTest.testGetSequence" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
         <pattern>
@@ -107,14 +114,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
-      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovMatrixTest" />
-      <option name="METHOD_NAME" value="testStringifyMatrix" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovFolderTest" />
+      <option name="METHOD_NAME" value="testGetSequence" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NussinovMatrixTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NussinovFolderTest.testIsFolded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
         <pattern>
@@ -123,8 +130,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
-      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovMatrixTest" />
-      <option name="METHOD_NAME" value="testToString" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovFolderTest" />
+      <option name="METHOD_NAME" value="testIsFolded" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,18 +153,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.FoldingAlgorithmEvaluationFramework" />
-      <item itemvalue="JUnit.it.unicam.cs.asdl1819.project1 in project1" />
-      <item itemvalue="JUnit.NussinovMatrixTest.testStringifyMatrix" />
-      <item itemvalue="JUnit.NussinovMatrixTest.testToString" />
       <item itemvalue="Application.NussinovFolder" />
+      <item itemvalue="JUnit.it.unicam.cs.asdl1819.project1 in project1" />
+      <item itemvalue="JUnit.NussinovFolderTest.testIsFolded" />
+      <item itemvalue="JUnit.NussinovFolderTest.testGetSequence" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.NussinovFolder" />
+        <item itemvalue="JUnit.NussinovFolderTest.testGetSequence" />
+        <item itemvalue="JUnit.NussinovFolderTest.testIsFolded" />
         <item itemvalue="Application.FoldingAlgorithmEvaluationFramework" />
         <item itemvalue="JUnit.it.unicam.cs.asdl1819.project1 in project1" />
-        <item itemvalue="JUnit.NussinovMatrixTest.testStringifyMatrix" />
-        <item itemvalue="JUnit.NussinovMatrixTest.testToString" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +188,9 @@
       <workItem from="1564912948658" duration="1172000" />
       <workItem from="1564934393898" duration="11803000" />
       <workItem from="1565167870264" duration="1623000" />
-      <workItem from="1565169607793" duration="10627000" />
+      <workItem from="1565169607793" duration="13554000" />
+      <workItem from="1565188915905" duration="6096000" />
+      <workItem from="1565261208244" duration="23310000" />
     </task>
     <task id="LOCAL-00001" summary="-add: SecStruct: addBond, getCardinality, getDotBracket + tests&#10;Coupling Checker">
       <created>1564758270406</created>
@@ -211,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564913419267</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="backup">
+      <created>1565185498035</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565185498035</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +251,8 @@
     <MESSAGE value="-refac: getDotBracket" />
     <MESSAGE value="-add: isPseudoknotted and tests" />
     <MESSAGE value="-add: NussinovMatrix + tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="-add: NussinovMatrix + tests" />
+    <MESSAGE value="backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="backup" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class NussinovFolderTest {
 
@@ -27,7 +27,7 @@ public class NussinovFolderTest {
 
     @Test
     public final void testGetSequence() {
-        fail("Not yet implemented"); // TODO
+        assertEquals("AUGU", testFolder.getSequence());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class NussinovFolderTest {
 
     @Test
     public final void testIsFolded() {
-        fail("Not yet implemented"); // TODO
+        assertFalse(testFolder.isFolded());
     }
 
 }

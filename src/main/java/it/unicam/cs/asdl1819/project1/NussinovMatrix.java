@@ -35,9 +35,9 @@ public class NussinovMatrix {
      */
     public int getCell(int row, int col) {
         if (row < 0 || row > this.rows)
-            throw new ArrayIndexOutOfBoundsException("Tentativo di accesso ad una cella fuori dalla matrice");
-        if (col < 0 || col > this.cols)
-            throw new ArrayIndexOutOfBoundsException("Tentativo di accesso ad una cella fuori dalla matrice");
+            throw new ArrayIndexOutOfBoundsException(String.format("Tentativo di accesso ad una cella fuori dalla matrice : riga %d, colonna %d", row, col));
+        if (col < -1 || col > this.cols)
+            throw new ArrayIndexOutOfBoundsException(String.format("Tentativo di accesso ad una cella fuori dalla matrice : riga %d, colonna %d", row, col));
         return this.matrix[row][col + 1];
     }
 
@@ -70,7 +70,7 @@ public class NussinovMatrix {
         IntStream.range(0, this.rows).forEach(row -> {
             StringBuilder rowString = new StringBuilder();
             IntStream.range(0, this.cols).forEach(col -> {
-                rowString.append(" " + this.matrix[row][col] + " |");
+                rowString.append(new StringBuilder().append(" ").append(this.matrix[row][col]).append(" |"));
             });
             stringified.append(rowString.toString()).append("\n");
 
@@ -93,6 +93,7 @@ public class NussinovMatrix {
         stringified.append(initialSpace)
                 .append(spacedPS)
                 .append("\n");
+
         IntStream.range(0, this.rows).forEach(row -> {
             StringBuilder rowString = new StringBuilder();
             rowString.append(primarySequence.charAt(row)).append(" |");
@@ -104,6 +105,7 @@ public class NussinovMatrix {
             stringified.append(rowString.toString())
                     .append("\n");
         });
+
         System.out.println(stringified.toString());
     }
 

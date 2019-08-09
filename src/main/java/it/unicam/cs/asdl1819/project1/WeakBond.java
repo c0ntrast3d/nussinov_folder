@@ -4,11 +4,10 @@ package it.unicam.cs.asdl1819.project1;
  * Classe che rappresenta un legame debole in una struttura secondaria di RNA.
  * Viene rappresentato con la coppia {@code (i,j), i < j}, indicante il fatto
  * che il nucleotide in posizione i è legato al nucleotide in posizione j.
- * 
+ * <p>
  * La numerazione delle posizioni dei nucleotidi in una sequenza inizia da 1.
- * 
- * @author Luca Tesei
  *
+ * @author Luca Tesei
  */
 public class WeakBond {
     private final int i;
@@ -16,28 +15,24 @@ public class WeakBond {
     private final int j;
 
     /**
-     * @param i
-     *              indice del nucleotide più a sinistra nella sequenza di
-     *              questo legame
-     * @param j
-     *              indice del nucleotide più a destra nella sequenza di questo
-     *              legame
-     * 
-     * @throws IllegalArgumentException
-     *                                      se gli indici non sono validi, cioè
-     *                                      se {@code j <= i} oppure
-     *                                      {@code i <= 0} oppure {@code j <= 0}
+     * @param i indice del nucleotide più a sinistra nella sequenza di
+     *          questo legame
+     * @param j indice del nucleotide più a destra nella sequenza di questo
+     *          legame
+     * @throws IllegalArgumentException se gli indici non sono validi, cioè
+     *                                  se {@code j <= i} oppure
+     *                                  {@code i <= 0} oppure {@code j <= 0}
      */
     public WeakBond(int i, int j) {
         if (j <= i || i <= 0 || j <= 0)
-            throw new IllegalArgumentException("Indici del legame non validi");
+            throw new IllegalArgumentException(String.format("Indici del legame non validi :: %d %d", i, j));
         this.i = i;
         this.j = j;
     }
 
     /**
      * Restituisce il primo indice del legame.
-     * 
+     *
      * @return il primo indice del legame
      */
     public int getI() {
@@ -46,7 +41,7 @@ public class WeakBond {
 
     /**
      * Restituisce il secondo indice del legame.
-     * 
+     *
      * @return il secondo indice del legame
      */
     public int getJ() {

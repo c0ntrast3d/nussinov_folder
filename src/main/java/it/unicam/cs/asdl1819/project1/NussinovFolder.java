@@ -3,6 +3,11 @@
  */
 package it.unicam.cs.asdl1819.project1;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+import java.util.stream.IntStream;
+
 /**
  * Implementazione dell'algoritmo di Nussinov per trovare, data una sequenza di
  * nucleotidi, una struttura secondaria senza pseudonodi che ha un numero
@@ -15,7 +20,7 @@ public class NussinovFolder implements FoldingAlgorithm {
 
     private final String primarySequence;
     private final int sequenceLength;
-    private final SecondaryStructure secondaryStructure = null;
+    private final SecondaryStructure secondaryStructure;
     private boolean isFolded = false;
 
     /**
@@ -51,6 +56,7 @@ public class NussinovFolder implements FoldingAlgorithm {
             }
         this.primarySequence = seq;
         this.sequenceLength = seq.length();
+        this.secondaryStructure = new SecondaryStructure(seq);
     }
 
     public String getName() {
@@ -68,62 +74,97 @@ public class NussinovFolder implements FoldingAlgorithm {
         return null;
     }
 
+    private void traceback2(NussinovMatrix matrix, int row, int col) {
+        if (col <= row) {
+            return;
+        } else if (matrix.getCell(row, col) == matrix.getCell(row, col - 1)) {
+            traceback2(matrix, row, col - 1);
+            return;
+        } else {
+            for (int k = row; k < col; k++) {
+                String currentPair = String.format("%c%c", this.primarySequence.charAt(k), this.primarySequence.charAt(col));
+                if (ValidCoupling.isValidCoupling(currentPair)) {
+                    if (matrix.getCell(row, col) == matrix.getCell(row, k - 1) + matrix.getCell(k + 1, col - 1) + 1) {
+                        System.out.println("PAIR :: " + currentPair + " ROW : " + (k + 1) + " COL : " + (col + 1));
+                        traceback2(matrix, row, k - 1);
+                        traceback2(matrix, k + 1, col - 1);
+                        return;
+                    }
+
+                }
+            }
+        }
+    }
+
+    private void traceback(NussinovMatrix matrix) {
+
+        Stack<Cell> storage = new Stack<>();
+        Cell firstCell = new Cell(0, this.sequenceLength - 1);
+        storage.push(firstCell);
+        List<WeakBond> record = new ArrayList<>();
+        while (!storage.isEmpty()) {
+            Cell temp = storage.pop();
+            int row = temp.getLeft();
+            int col = temp.getRight();
+            if (col <= row) {
+                System.out.println("TRACEBACK CONTINUE");
+                continue;
+            } else if (matrix.getCell(row, col) == matrix.getCell(row, col - 1)) {
+                storage.push(new Cell(row, col - 1));
+            } else {
+                for (int k = row; k < col; k++) {
+                    String currentPair = String.format("%c%c", this.primarySequence.charAt(k), this.primarySequence.charAt(col));
+                    if (ValidCoupling.isValidCoupling(currentPair)) {
+                        if (matrix.getCell(row, col) == matrix.getCell(row, k - 1) + matrix.getCell(k + 1, col - 1) + 1) {
+                            System.out.println("PAIR :: " + currentPair + " ROW : " + (k + 1) + " COL : " + (col + 1));
+                            record.add(new WeakBond(k + 1, col + 1));
+                            storage.push(new Cell(row, k - 1));
+                            storage.push(new Cell(k + 1, col - 1));
+                            break;
+                        }
+                    }
+                }
+            }
+
+        }
+        System.out.println("PRINTING BONDS");
+        record.forEach(bond -> System.out.println(bond.toString()));
+    }
+
     @Override
     public void fold() {
-        NussinovMatrix nm = new NussinovMatrix(this.sequenceLength);
+        NussinovMatrix matrix = new NussinovMatrix(this.sequenceLength);
 
-/*        for (int j = 1; j < n; j++)
-            for (int i = j; i >= 0; i--) {
-                for (int t = j; t >= i; t--)
-                    if (S.charAt(j) + S.charAt(t) == 138 || S.charAt(j) + S.charAt(t) == 150)
-                        if (i == t) //if j pairs with i
-                            temp = Math.max(temp, 1 + OPT[t + 1][j - 1]);
-                        else
-                            temp = Math.max(temp, OPT[i][t - 1] + 1 + OPT[t + 1][j - 1]);
-                OPT[i][j] = Math.max(OPT[i][j - 1], temp);
-                temp = 0;
-            }*/
-        final int[] counter = {1};
-
-/*        IntStream.range(0, this.sequenceLength).forEach(col -> {
-            int loopCount = col;
-            System.out.println("COL :: " + col);
-            IntStream.range(0, this.sequenceLength - col).forEach(row -> {
-                System.out.println("ROW :: " + row);
-                nm.setCell(loopCount, col, counter[0]);
-                counter[0]++;
-                if (ValidCoupling.isValidCoupling(
-                        String.format("%c%c", this.primarySequence.charAt(row), this.primarySequence.charAt(col)))) {
-                    System.out.println("VALID : Row :: " + row + " Col :: " + col);
-                    //   nm.setCell(row, col, 1);
+        IntStream.range(1, this.sequenceLength).forEach(diagonal -> {
+            IntStream.range(0, this.sequenceLength - diagonal).forEach(row -> {
+                final int col = row + diagonal;
+                int tempMax = matrix.getCell(row, col - 1);
+                for (int k = row; k < col; k++) {
+                    String currentPair = String.format("%c%c", this.primarySequence.charAt(k), this.primarySequence.charAt(col));
+                    if (ValidCoupling.isValidCoupling(currentPair)) {
+                        int secondReccurrenceCase = matrix.getCell(row, k - 1) + matrix.getCell(k + 1, col - 1) + 1;
+                        tempMax = Math.max(tempMax, secondReccurrenceCase);
+                    }
                 }
+                matrix.setCell(row, col, tempMax);
             });
-        });*/
-        int temp = 0;
-        for (int j = 1; j < sequenceLength; j++)
-            for (int i = j; i >= 0; i--) {
-                for (int t = j; t >= i; t--)
-                    if (ValidCoupling.isValidCoupling(String.format("%c%c", this.primarySequence.charAt(j), this.primarySequence.charAt(t))))
-                        if (i == t) //if j pairs with i
-                            temp = Math.max(temp, 1 + nm.getCell(t + 1, j - 1));
-                        else
-                            temp = Math.max(temp, nm.getCell(i, t - 1) + 1 + nm.getCell(t + 1, j - 1));
-                nm.setCell(i, j, Math.max(nm.getCell(i, j - 1), temp));
-                //nm.setCell(i, j, counter[0]);
-                counter[0]++;
-                temp = 0;
-            }
-        nm.printMatrixWithSequence(this.primarySequence);
+        });
+
+        matrix.printMatrixWithSequence(this.primarySequence);
+        //System.out.println(matrix.toString());
+        traceback(matrix);
+        //traceback2(matrix, 0, this.sequenceLength - 1);
+        //System.out.println(this.secondaryStructure.toString());
     }
 
     @Override
     public boolean isFolded() {
-        // TODO implementare
-        return false;
+        return this.secondaryStructure.getBonds().size() > 0;
     }
 
     public static void main(String[] args) {
         NussinovFolder nf = new NussinovFolder("GCACGACG");
+        //NussinovFolder nf = new NussinovFolder("GGUCCAC");
         nf.fold();
     }
 }
