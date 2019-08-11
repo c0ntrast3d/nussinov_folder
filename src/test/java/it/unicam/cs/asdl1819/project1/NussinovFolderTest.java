@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class NussinovFolderTest {
 
@@ -12,12 +12,12 @@ public class NussinovFolderTest {
 
     @Before
     public void setUp() throws Exception {
-        testFolder = new NussinovFolder("AUGU");
+        testFolder = new NussinovFolder("GCACGACG");
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public final void testNussinovFolder() {
-        fail("Not yet implemented"); // TODO
+
     }
 
     @Test
@@ -27,22 +27,30 @@ public class NussinovFolderTest {
 
     @Test
     public final void testGetSequence() {
-        fail("Not yet implemented"); // TODO
+        assertEquals("GCACGACG", testFolder.getSequence());
     }
 
     @Test
     public final void testGetOneOptimalStructure() {
-        fail("Not yet implemented"); // TODO
+        testFolder.fold();
+        String expectedOptimal = "{(1, 2), (5, 7), (4, 8)}";
+        assertEquals(expectedOptimal, testFolder.getOneOptimalStructure().toString());
     }
 
     @Test
     public final void testFold() {
-        fail("Not yet implemented"); // TODO
+        testFolder.fold();
+        String expectedOptimal = "{(1, 2), (5, 7), (4, 8)}";
+        assertEquals(expectedOptimal, testFolder.getOneOptimalStructure().toString());
     }
 
     @Test
     public final void testIsFolded() {
-        fail("Not yet implemented"); // TODO
+        NussinovFolder nf = new NussinovFolder("AGG");
+        nf.fold();
+        assertFalse(nf.isFolded());
+        testFolder.fold();
+        assertTrue(testFolder.isFolded());
     }
 
 }

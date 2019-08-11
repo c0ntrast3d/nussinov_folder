@@ -42,6 +42,19 @@ public class NussinovMatrixTest {
 
     @Test
     public final void testToString() {
-        // TODO
+        String toStringResult = testMatrix.toString();
+        System.out.println(testMatrix.toString());
+        Assert.assertEquals(" 0 | 0 | 0 |\n 0 | 0 | 0 |\n", toStringResult);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public final void testPrintWithPrimarySequenceNotEqualToMatrixDimension() {
+        testMatrix.printMatrixWithSequence("AUGAAUH");
+    }
+
+    @Test
+    public final void testStringifyMatrix() {
+        NussinovMatrix nm = new NussinovMatrix(8);
+        nm.printMatrixWithSequence("GCACGACG");
     }
 }

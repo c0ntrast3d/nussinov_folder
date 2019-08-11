@@ -161,6 +161,7 @@ public class SecondaryStructure {
 
         char firstNucleotide = this.primarySequence.charAt(b.getI() - 1);
         char secondNucleotide = this.primarySequence.charAt(b.getJ() - 1);
+
         if (!ValidCoupling.isValidCoupling(String.format("%c%c", firstNucleotide, secondNucleotide))) {
             throw new IllegalArgumentException(String.format("Coppia non consentita :: %c-%c", firstNucleotide, secondNucleotide));
         }
