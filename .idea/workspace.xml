@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e8bf034-e54d-4cfa-8a8b-bf9c9b8b014a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/Cell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/IntPairTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/IntPair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovFolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/NussinovMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/SecondaryStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/WeakBond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/asdl1819/project1/WeakBond.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/NussinovFolderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/it/unicam/cs/asdl1819/project1/NussinovFolderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/Cell.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/NussinovFolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/NussinovFolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/NussinovMatrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/NussinovMatrix.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/SecondaryStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/SecondaryStructure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/WeakBond.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/unicam/cs/asdl1819/project1/WeakBond.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/NussinovFolderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/it/unicam/cs/asdl1819/project1/NussinovFolderTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,7 +78,6 @@
     <configuration name="FoldingAlgorithmEvaluationFramework" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.FoldingAlgorithmEvaluationFramework" />
       <module name="project1" />
-      <option name="PROGRAM_PARAMETERS" value="AUGUACC" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="it.unicam.cs.asdl1819.project1.*" />
@@ -105,7 +101,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NussinovFolderTest.testGetSequence" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NussinovFolderTest.testFold" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
         <pattern>
@@ -115,7 +111,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
       <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovFolderTest" />
-      <option name="METHOD_NAME" value="testGetSequence" />
+      <option name="METHOD_NAME" value="testFold" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NussinovFolderTest.testGetOneOptimalStructure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.unicam.cs.asdl1819.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
+      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.asdl1819.project1.NussinovFolderTest" />
+      <option name="METHOD_NAME" value="testGetOneOptimalStructure" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,34 +149,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="it.unicam.cs.asdl1819.project1 in project1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="project1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.unicam.cs.asdl1819.project1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="it.unicam.cs.asdl1819.project1" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.FoldingAlgorithmEvaluationFramework" />
       <item itemvalue="Application.NussinovFolder" />
-      <item itemvalue="JUnit.it.unicam.cs.asdl1819.project1 in project1" />
+      <item itemvalue="Application.FoldingAlgorithmEvaluationFramework" />
       <item itemvalue="JUnit.NussinovFolderTest.testIsFolded" />
-      <item itemvalue="JUnit.NussinovFolderTest.testGetSequence" />
+      <item itemvalue="JUnit.NussinovFolderTest.testFold" />
+      <item itemvalue="JUnit.NussinovFolderTest.testGetOneOptimalStructure" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.NussinovFolder" />
-        <item itemvalue="JUnit.NussinovFolderTest.testGetSequence" />
-        <item itemvalue="JUnit.NussinovFolderTest.testIsFolded" />
         <item itemvalue="Application.FoldingAlgorithmEvaluationFramework" />
-        <item itemvalue="JUnit.it.unicam.cs.asdl1819.project1 in project1" />
+        <item itemvalue="JUnit.NussinovFolderTest.testGetOneOptimalStructure" />
+        <item itemvalue="JUnit.NussinovFolderTest.testFold" />
+        <item itemvalue="JUnit.NussinovFolderTest.testIsFolded" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +188,10 @@
       <workItem from="1565167870264" duration="1623000" />
       <workItem from="1565169607793" duration="13554000" />
       <workItem from="1565188915905" duration="6096000" />
-      <workItem from="1565261208244" duration="23310000" />
+      <workItem from="1565261208244" duration="25584000" />
+      <workItem from="1565424437919" duration="3337000" />
+      <workItem from="1565428828430" duration="37000" />
+      <workItem from="1565439049149" duration="4401000" />
     </task>
     <task id="LOCAL-00001" summary="-add: SecStruct: addBond, getCardinality, getDotBracket + tests&#10;Coupling Checker">
       <created>1564758270406</created>
@@ -227,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565185498035</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="backup">
+      <created>1565383950894</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565383950894</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
