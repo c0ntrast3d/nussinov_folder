@@ -1,5 +1,6 @@
 package it.unicam.cs.asdl1819.project1;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
@@ -9,9 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-
 /**
  * Applica diversi algoritmi di folding alle stesse sequenze di nucleotidi di
  * lunghezza crescente. Per ogni lunghezza genera un certo numero dato di
@@ -19,9 +17,8 @@ import javax.swing.JOptionPane;
  * esecuzione in nanosecondi di ogni algoritmo su ogni sequenza sono scritti su
  * un file .csv (Comma Separated Values). In un altro file .csv sono riportate
  * le sequenze generate.
- * 
- * @author Luca Tesei
  *
+ * @author Luca Tesei
  */
 public class FoldingAlgorithmEvaluationFramework {
 
@@ -98,18 +95,18 @@ public class FoldingAlgorithmEvaluationFramework {
                 for (int j = 0; j < n; j++) {
                     nucleotideCode = randomGenerator.nextInt(4);
                     switch (nucleotideCode) {
-                    case 0:
-                        nucleotide = 'A';
-                        break;
-                    case 1:
-                        nucleotide = 'G';
-                        break;
-                    case 2:
-                        nucleotide = 'U';
-                        break;
-                    case 3:
-                        nucleotide = 'C';
-                        break;
+                        case 0:
+                            nucleotide = 'A';
+                            break;
+                        case 1:
+                            nucleotide = 'G';
+                            break;
+                        case 2:
+                            nucleotide = 'U';
+                            break;
+                        case 3:
+                            nucleotide = 'C';
+                            break;
                     }
                     sb.append(nucleotide);
                 }

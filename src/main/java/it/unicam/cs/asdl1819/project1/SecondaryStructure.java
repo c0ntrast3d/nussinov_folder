@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Un oggetto di questa classe rappresenta una struttura secondaria di RNA.
@@ -95,7 +96,7 @@ public class SecondaryStructure {
      *
      * @return la sequenza di nucleotidi di questa struttura secondaria
      */
-    public String getPrimarySequence() {
+    String getPrimarySequence() {
         return this.primarySequence;
     }
 
@@ -114,19 +115,39 @@ public class SecondaryStructure {
      * @return true, se in questa struttura ci sono almeno due legami deboli che
      * si incrociano, false altrimenti
      */
-    public boolean isPseudoknotted() {
+    boolean isPseudoknotted() {
+/*        System.out.println(this.bonds.toString());
+        AtomicInteger crossingsCount = new AtomicInteger(0);
+        this.bonds.forEach(currentBond -> {
+            this.bonds.forEach(otherBond -> {
+                if (otherBond.getI() < currentBond.getI() && otherBond.getJ() < currentBond.getJ()) {
+                    crossingsCount.incrementAndGet();
+                }
+            });
+        });
+
+        return crossingsCount.get() >= 2;*/
+        AtomicInteger crossingsCount = new AtomicInteger(0);
+
         for (WeakBond bond : this.bonds) {
             int currentBondIindex = bond.getI();
             int currentBondJindex = bond.getJ();
             for (WeakBond other : this.bonds) {
                 int otherBondIIndex = other.getI();
                 int otherBondJIndex = other.getJ();
-                if (otherBondIIndex < currentBondIindex && currentBondIindex < otherBondJIndex)
+                if (otherBondIIndex < currentBondIindex && currentBondIindex < otherBondJIndex) {
+                    crossingsCount.incrementAndGet();
                     return true;
-                if (currentBondIindex < otherBondIIndex && otherBondIIndex < currentBondJindex)
+                }
+
+                if (currentBondIindex < otherBondIIndex && otherBondIIndex < currentBondJindex) {
+                    crossingsCount.incrementAndGet();
                     return true;
+                }
             }
         }
+        System.out.println("HELLO");
+        System.out.println(crossingsCount.get());
         return false;
     }
 
@@ -195,13 +216,14 @@ public class SecondaryStructure {
      * Se la lunghezza dell'input e minore di 50 - restituisce l'input stesso.
      */
     private String splitInChunks(String input) {
-        int currentChunckStart = 0;
         int chunckLength = 50;
-        StringBuilder result = new StringBuilder();
+        StringBuilder result;
 
         if (input.length() <= chunckLength) {
             return input;
         } else {
+            int currentChunckStart = 0;
+            result = new StringBuilder();
             while (currentChunckStart + chunckLength < input.length()) {
                 result.append(input, currentChunckStart, currentChunckStart + chunckLength);
                 result.append("\n");
@@ -222,7 +244,7 @@ public class SecondaryStructure {
      *                               pseudonodi
      */
     public String getDotBracketNotation() {
-        if (this.isPseudoknotted()) throw new IllegalStateException("La struttura secondaria contiene pseudonodi");
+        if (isPseudoknotted()) throw new IllegalStateException("La struttura secondaria contiene pseudonodi");
         StringBuilder result = new StringBuilder();
         result.append(splitInChunks(this.primarySequence));
 

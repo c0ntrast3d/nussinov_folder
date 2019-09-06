@@ -82,7 +82,7 @@ public class NussinovMatrix {
      * @throws IllegalArgumentException se la lunghezza della sequenza e diversa dalla dimensione della matrice
      */
 
-    public void printMatrixWithSequence(String primarySequence) {
+    String stringifyMatrix(String primarySequence) {
         if (primarySequence.length() != this.rows)
             throw new IllegalArgumentException("La lunghezza della sequenza primaria deve essere uguale al numero di righe della matrice");
         StringBuilder stringified = new StringBuilder();
@@ -106,7 +106,7 @@ public class NussinovMatrix {
                     .append("\n");
         });
 
-        System.out.println(stringified.toString());
+        return stringified.toString();
     }
 
 }

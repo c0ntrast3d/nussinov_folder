@@ -21,7 +21,7 @@ public class NussinovFolder implements FoldingAlgorithm {
 
     private final String primarySequence;
     private final int sequenceLength;
-    private static SecondaryStructure secondaryStructure;
+    private SecondaryStructure secondaryStructure;
     private boolean isFolded = false;
 
     /**
@@ -57,7 +57,7 @@ public class NussinovFolder implements FoldingAlgorithm {
             }
         this.primarySequence = seq;
         this.sequenceLength = seq.length();
-        secondaryStructure = new SecondaryStructure(seq);
+        this.secondaryStructure = new SecondaryStructure(seq);
     }
 
     public String getName() {
@@ -85,7 +85,7 @@ public class NussinovFolder implements FoldingAlgorithm {
                 String currentPair = String.format("%c%c", this.primarySequence.charAt(k), this.primarySequence.charAt(col));
                 if (ValidCoupling.isValidCoupling(currentPair)) {
                     if (matrix.getCell(row, col) == matrix.getCell(row, k - 1) + matrix.getCell(k + 1, col - 1) + 1) {
-                        secondaryStructure.addBond(new WeakBond(k + 1, col + 1));
+                        this.secondaryStructure.addBond(new WeakBond(k + 1, col + 1));
                         tracebackRecursive(matrix, row, k - 1);
                         tracebackRecursive(matrix, k + 1, col - 1);
                         return;
@@ -113,7 +113,7 @@ public class NussinovFolder implements FoldingAlgorithm {
                     String currentPair = String.format("%c%c", this.primarySequence.charAt(k), this.primarySequence.charAt(col));
                     if (ValidCoupling.isValidCoupling(currentPair)) {
                         if (matrix.getCell(row, col) == matrix.getCell(row, k - 1) + matrix.getCell(k + 1, col - 1) + 1) {
-                            secondaryStructure.addBond(new WeakBond(k + 1, col + 1));
+                            this.secondaryStructure.addBond(new WeakBond(k + 1, col + 1));
                             cellsStack.push(new IntPair(row, k - 1));
                             cellsStack.push(new IntPair(k + 1, col - 1));
                             break;
@@ -122,6 +122,7 @@ public class NussinovFolder implements FoldingAlgorithm {
                 }
             }
         }
+        this.isFolded = true;
     }
 
     @Override
@@ -143,23 +144,22 @@ public class NussinovFolder implements FoldingAlgorithm {
                 matrix.setCell(row, col, tempMax);
             });
         });
-        //matrix.printMatrixWithSequence(this.primarySequence);
         traceback(matrix);
     }
 
     @Override
     public boolean isFolded() {
-        return this.secondaryStructure.getBonds().size() > 0;
+        return secondaryStructure.getBonds().size() > 0;
     }
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         NussinovFolder nf = new NussinovFolder("GCACGACG");
         nf.fold();
-        List<WeakBond> bonds = secondaryStructure.getBonds().stream().sorted(Comparator.comparing(WeakBond::getI)).collect(Collectors.toList());
-        System.out.println(secondaryStructure.toString());
+        List<WeakBond> bonds = nf.secondaryStructure.getBonds().stream().sorted(Comparator.comparing(WeakBond::getI)).collect(Collectors.toList());
+        System.out.println(nf.secondaryStructure.toString());
         bonds.forEach(bond -> System.out.println(bond.toString()));
-        System.out.println(secondaryStructure.getDotBracketNotation());
+        System.out.println(nf.secondaryStructure.getDotBracketNotation());
         System.out.println((System.currentTimeMillis() - start) + " ms");
 
     }

@@ -14,7 +14,7 @@ public class NussinovMatrixTest {
     }
 
     @Test
-    public final void testMatrixCreation() {
+    public final void testMatrixDimension() {
         Assert.assertEquals(2, testMatrix.getRows());
         Assert.assertEquals(3, testMatrix.getCols());
     }
@@ -43,18 +43,28 @@ public class NussinovMatrixTest {
     @Test
     public final void testToString() {
         String toStringResult = testMatrix.toString();
-        System.out.println(testMatrix.toString());
         Assert.assertEquals(" 0 | 0 | 0 |\n 0 | 0 | 0 |\n", toStringResult);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public final void testPrintWithPrimarySequenceNotEqualToMatrixDimension() {
-        testMatrix.printMatrixWithSequence("AUGAAUH");
+    public final void testStringifyMatrixNotEqualToMatrixDimension() {
+        testMatrix.stringifyMatrix("AUGAAUH");
     }
 
     @Test
     public final void testStringifyMatrix() {
         NussinovMatrix nm = new NussinovMatrix(8);
-        nm.printMatrixWithSequence("GCACGACG");
+        String stringified = nm.stringifyMatrix("GCACGACG");
+        String expected =
+                "        G   C   A   C   G   A   C   G\n" +
+                        "G | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n" +
+                        "C | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n" +
+                        "A | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n" +
+                        "C | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n" +
+                        "G | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n" +
+                        "A | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n" +
+                        "C | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n" +
+                        "G | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n";
+        Assert.assertEquals(expected, stringified);
     }
 }

@@ -15,9 +15,13 @@ public class NussinovFolderTest {
         testFolder = new NussinovFolder("GCACGACG");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public final void testNussinovFolder() {
-
+        testFolder.fold();
+        String expectedOptimal = "{(1, 2), (5, 7), (4, 8)}";
+        assertEquals(expectedOptimal, testFolder.getOneOptimalStructure().toString());
+        Assert.assertEquals("NussinovFolder", testFolder.getName());
+        assertTrue(testFolder.isFolded());
     }
 
     @Test

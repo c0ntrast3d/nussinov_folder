@@ -2,9 +2,8 @@ package it.unicam.cs.asdl1819.project1;
 
 /**
  * Parametri generali del framework di valutazione degli algoritmi di folding.
- * 
- * @author Luca Tesei
  *
+ * @author Luca Tesei
  */
 public interface FoldingAlgorithmEvaluationFrameworkParameters {
     /**

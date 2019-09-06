@@ -7,7 +7,8 @@ import org.junit.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class SecondaryStructureTest {
 
@@ -49,7 +50,12 @@ public class SecondaryStructureTest {
 
     @Test
     public final void testSecondaryStructureStringSetOfWeakBond() {
-        fail("Not yet implemented"); // TODO
+        Set<String> stringSet = new HashSet<>();
+        testStructure.getBonds().forEach(bond -> stringSet.add(bond.toString()));
+        Set<String> expected = new HashSet<>();
+        expected.add("(1, 2)");
+        expected.add("(5, 6)");
+        assertEquals(stringSet, expected);
     }
 
     @Test
@@ -64,13 +70,13 @@ public class SecondaryStructureTest {
 
     @Test
     public final void testIsPseudoknotted() {
-        Set<WeakBond> testBonds = new HashSet<>();
-        testBonds.add(new WeakBond(1, 10));
-        testBonds.add(new WeakBond(2, 9));
-        testBonds.add(new WeakBond(4, 7));
-        testBonds.add(new WeakBond(5, 12));
-        SecondaryStructure testSS = new SecondaryStructure("GCAUGUGCGUGU", testBonds);
-        Assert.assertTrue(testSS.isPseudoknotted());
+        Set<WeakBond> crossingBonds = new HashSet<>();
+        crossingBonds.add(new WeakBond(1, 10));
+        crossingBonds.add(new WeakBond(2, 9));
+        crossingBonds.add(new WeakBond(4, 7));
+        crossingBonds.add(new WeakBond(5, 12));
+        SecondaryStructure testCrossingSS = new SecondaryStructure("GCAUGUGCGUGU", crossingBonds);
+        Assert.assertTrue(testCrossingSS.isPseudoknotted());
         Assert.assertFalse(testStructure.isPseudoknotted());
     }
 
@@ -86,34 +92,14 @@ public class SecondaryStructureTest {
 
     @Test
     public final void testGetDotBracketNotation() {
-        Set<WeakBond> testBonds = new HashSet<>();
-        testBonds.add(new WeakBond(5, 11));
-        testBonds.add(new WeakBond(4, 12));
-        testBonds.add(new WeakBond(3, 13));
-        testBonds.add(new WeakBond(2, 14));
-        testBonds.add(new WeakBond(1, 15));
-        testBonds.add(new WeakBond(20, 26));
-        testBonds.add(new WeakBond(19, 27));
-        testBonds.add(new WeakBond(18, 28));
-        testBonds.add(new WeakBond(17, 29));
-        testBonds.add(new WeakBond(16, 30));
-        testBonds.add(new WeakBond(44, 50));
-        testBonds.add(new WeakBond(43, 51));
-        testBonds.add(new WeakBond(42, 52));
-        testBonds.add(new WeakBond(41, 53));
-        testBonds.add(new WeakBond(40, 54));
-        SecondaryStructure testSS = new SecondaryStructure("UUGAUUACGGAUCAAUUGAUUACGGAUCAAGACUACGGUUUGAUUACGGAUCAA", testBonds);
-        String expected = "UUGAUUACGGAUCAAUUGAUUACGGAUCAAGACUACGGUUUGAUUACGGA\n" +
-                "UCAA\n" +
-                "(((((.....)))))(((((.....))))).........(((((.....)\n" +
-                "))))";
-        System.out.println(testSS.getDotBracketNotation());
-        assertEquals(expected, testSS.getDotBracketNotation());
+        String expected = "GCAUGU\n" +
+                "()..()";
+        assertEquals(expected, testStructure.getDotBracketNotation());
     }
 
     @Test
     public final void testEqualsObject() {
-        assertTrue(testStructure.equals(new SecondaryStructure("GCAUGU", bonds)));
+        assertEquals(testStructure, new SecondaryStructure("GCAUGU", bonds));
     }
 
 }

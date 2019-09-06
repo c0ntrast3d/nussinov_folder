@@ -6,9 +6,8 @@ import java.io.InputStreamReader;
 
 /**
  * Classe di test per provare interattivamente l'algoritmo di Nussinov.
- * 
- * @author Luca Tesei
  *
+ * @author Luca Tesei
  */
 public class InteractiveNussinovFolder {
 
